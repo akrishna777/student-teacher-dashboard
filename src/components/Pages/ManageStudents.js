@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../Footer'
 
 const ManageStudents = ({
   inactive,
@@ -15,7 +16,7 @@ const ManageStudents = ({
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(studentFormData)
+
     if (studentFormData.id) {
       updateStudent()
       setStudentFormData(studentInitialValues)
@@ -31,7 +32,6 @@ const ManageStudents = ({
         'https://6276914abc9e46be1a1801f3.mockapi.io/students',
         studentFormData,
       )
-      console.log(resp.data)
     } catch (err) {
       // Handle Error Here
       console.error(err)
@@ -44,7 +44,6 @@ const ManageStudents = ({
         `https://6276914abc9e46be1a1801f3.mockapi.io/students/${studentFormData.id}`,
         studentFormData,
       )
-      console.log(resp.data)
     } catch (err) {
       // Handle Error Here
       console.error(err)
@@ -59,7 +58,7 @@ const ManageStudents = ({
           toggleoff ? 'toggleoff' : ''
         }`}
       >
-        <div class="container">
+        <div className="container">
           <h1>Student Management</h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
@@ -69,61 +68,61 @@ const ManageStudents = ({
           </p>
 
           <form>
-            <div class="form-row d-flex">
-              <div class="form-group col-md-4 mx-2">
-                <label for="inputFirstName">First Name</label>
+            <div className="form-row d-flex">
+              <div className="form-group col-md-4 mx-2">
+                <label htmlFor="inputFirstName">First Name</label>
                 <input
                   name="FirstName"
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="firstname"
                   value={studentFormData.FirstName}
                   onChange={handleChange}
                 />
               </div>
-              <div class="form-group col-md-4 mx-2">
-                <label for="inputLastName">Last Name</label>
+              <div className="form-group col-md-4 mx-2">
+                <label htmlFor="inputLastName">Last Name</label>
                 <input
                   name="LastName"
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="lastname"
                   value={studentFormData.LastName}
                   onChange={handleChange}
                 />
               </div>
             </div>
-            <div class="form-row d-flex my-2">
-              <div class="form-group col-md-4 mx-2">
-                <label for="inputCourse">Course</label>
+            <div className="form-row d-flex my-2">
+              <div className="form-group col-md-4 mx-2">
+                <label htmlFor="inputCourse">Course</label>
                 <input
                   name="Course"
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="course"
                   value={studentFormData.Course}
                   onChange={handleChange}
                 />
               </div>
-              <div class="form-group col-md-4 mx-2">
-                <label for="inputBatch">Batch</label>
+              <div className="form-group col-md-4 mx-2">
+                <label htmlFor="inputBatch">Batch</label>
                 <input
                   name="Batch"
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="batch"
                   value={studentFormData.Batch}
                   onChange={handleChange}
                 />
               </div>
             </div>
-            <div class="form-row my-2">
-              <div class="form-group col-md-4 mx-2">
-                <label for="inputPhoneNo">Phone No.</label>
+            <div className="form-row my-2">
+              <div className="form-group col-md-4 mx-2">
+                <label htmlFor="inputPhoneNo">Phone No.</label>
                 <input
                   name="PhoneNumber"
                   type="text"
-                  class="form-control"
+                  className="form-control"
                   id="phonenumber"
                   value={studentFormData.PhoneNumber}
                   onChange={handleChange}
@@ -133,7 +132,7 @@ const ManageStudents = ({
 
             <button
               type="submit"
-              class="btn btn-primary my-4 mx-2"
+              className="btn btn-primary my-4 mx-2"
               onClick={handleSubmit}
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
@@ -141,35 +140,36 @@ const ManageStudents = ({
               Add Student
             </button>
           </form>
+          <Footer />
         </div>
       </div>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Added Successfully</h5>
+      <div className="modal fade" id="exampleModal" tabIndex="-1">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title">Added Successfully</h5>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <p>Student has been added.</p>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
               <button
                 type="button"
-                class="btn btn-danger"
+                className="btn btn-danger"
                 data-bs-dismiss="modal"
                 onClick={() => {
                   navigate(`/students`)

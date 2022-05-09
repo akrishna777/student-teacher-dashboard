@@ -7,12 +7,12 @@ const MenuItem = ({ name, subMenus, icon, onClick, to }) => {
     <li onClick={onClick}>
       <NavLink to={to} onClick={() => setExpand(!expand)} className="menu-item">
         <div className="menu-icon">
-          <i class={icon}></i>
+          <i className={icon}></i>
         </div>
         <span>{name}</span>
         {subMenus && subMenus.length > 0 ? (
           <div className="downarrow">
-            <i class="bi bi-chevron-down"></i>
+            <i className="bi bi-chevron-down"></i>
           </div>
         ) : null}
       </NavLink>

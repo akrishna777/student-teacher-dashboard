@@ -3,6 +3,7 @@ import Sidebar from '../Sidebar'
 import Navbar from '../Navbar'
 import logo from '../../assets/TechCademy-logos.jpeg'
 import homeImage from '../../assets/homeImage.jpg'
+import Footer from '../Footer'
 
 const Home = ({ inactive, toggleoff }) => {
   return (
@@ -14,7 +15,7 @@ const Home = ({ inactive, toggleoff }) => {
       >
         {/* <h1>This is HOMEPAGE</h1> */}
 
-        <div class="container">
+        <div className="container">
           <div className="heading d-flex my-2">
             <h1 style={{ fontFamily: 'Arvo' }}>Welcome to Techcademy</h1>
             <img
@@ -37,6 +38,7 @@ const Home = ({ inactive, toggleoff }) => {
             <img src={homeImage} id="homeImage" />
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   )

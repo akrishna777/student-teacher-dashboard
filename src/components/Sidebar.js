@@ -67,7 +67,7 @@ const Sidebar = ({ onCollapse, onToggleOff }) => {
 
       <div className="search-controller">
         <button className="search-btn">
-          <i class="bi bi-search"></i>
+          <i className="bi bi-search"></i>
         </button>
         <input type="text" placeholder="search" />
       </div>
@@ -95,9 +95,9 @@ const Sidebar = ({ onCollapse, onToggleOff }) => {
 
       <div className="toggle-menu-btn" onClick={() => setInactive(!inactive)}>
         {inactive ? (
-          <i class="bi bi-arrow-right-square-fill"></i>
+          <i className="bi bi-arrow-right-square-fill"></i>
         ) : (
-          <i class="bi bi-arrow-left-square-fill"></i>
+          <i className="bi bi-arrow-left-square-fill"></i>
         )}
       </div>
 

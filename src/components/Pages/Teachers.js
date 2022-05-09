@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import Footer from '../Footer'
 
 const Teachers = ({
   inactive,
@@ -13,7 +14,7 @@ const Teachers = ({
       const resp = await axios.get(
         'https://6276914abc9e46be1a1801f3.mockapi.io/teachers',
       )
-      console.log(resp.data)
+
       setTeacherData(resp.data)
     } catch (err) {
       // Handle Error Here
@@ -26,7 +27,7 @@ const Teachers = ({
       const resp = await axios.delete(
         `https://6276914abc9e46be1a1801f3.mockapi.io/teachers/${id}`,
       )
-      console.log(resp.data)
+
       setTeacherData(teacherData.filter((row) => row.id !== id))
     } catch (err) {
       // Handle Error Here
@@ -44,7 +45,7 @@ const Teachers = ({
           toggleoff ? 'toggleoff' : ''
         }`}
       >
-        <div class="container">
+        <div className="container">
           <h1>List of Teachers</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
@@ -54,8 +55,8 @@ const Teachers = ({
           </p>
 
           <div className="table-responsive">
-            <table class="table">
-              <thead class="thead-dark">
+            <table className="table">
+              <thead className="thead-dark">
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">First Name</th>
@@ -94,6 +95,7 @@ const Teachers = ({
               </tbody>
             </table>
           </div>
+          <Footer />
         </div>
       </div>
     </div>

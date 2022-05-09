@@ -40,14 +40,14 @@ function App() {
 
   const handleSelected = (id) => {
     const selectedData = stuData.filter((row) => row.id === id)[0]
-    console.log(selectedData)
+
     setStudentFormData(selectedData)
     navigate('/students/ManageStudents')
   }
 
   const teacherHandleSelected = (id) => {
     const selectedData = teacherData.filter((row) => row.id === id)[0]
-    console.log(selectedData)
+
     setTeacherFormData(selectedData)
     navigate('/teachers/ManageTeachers')
   }
@@ -57,7 +57,6 @@ function App() {
       <div className="wrapper">
         <Sidebar
           onCollapse={(inactive) => {
-            console.log(inactive)
             setInactive(inactive)
           }}
           onToggleOff={(toggleoff) => {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../../App.css'
 import { useNavigate } from 'react-router-dom'
+import Footer from '../Footer'
 
 const Students = ({
   inactive,
@@ -15,7 +16,7 @@ const Students = ({
       const resp = await axios.get(
         'https://6276914abc9e46be1a1801f3.mockapi.io/students',
       )
-      console.log(resp.data)
+
       setStuData(resp.data)
     } catch (err) {
       // Handle Error Here
@@ -27,7 +28,7 @@ const Students = ({
       const resp = await axios.delete(
         `https://6276914abc9e46be1a1801f3.mockapi.io/students/${id}`,
       )
-      console.log(resp.data)
+
       setStuData(stuData.filter((row) => row.id !== id))
     } catch (err) {
       // Handle Error Here
@@ -46,7 +47,7 @@ const Students = ({
           toggleoff ? 'toggleoff' : ''
         }`}
       >
-        <div class="container col-xs-12">
+        <div className="container col-xs-12">
           <h1>List of Students</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia,
@@ -58,8 +59,8 @@ const Students = ({
           </p>
 
           <div className="table-responsive">
-            <table class="table">
-              <thead class="thead-dark">
+            <table className="table">
+              <thead className="thead-dark">
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">First Name</th>
@@ -98,6 +99,7 @@ const Students = ({
               </tbody>
             </table>
           </div>
+          <Footer />
         </div>
       </div>
     </div>
